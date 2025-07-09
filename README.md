@@ -37,6 +37,7 @@ A full-stack web application that fetches data from the **YouTube Data API**, pr
 
 ## 🗂️ Project Structure
 
+```
 youtube_data_api_fetcher/
 │
 ├── frontend/
@@ -57,6 +58,7 @@ youtube_data_api_fetcher/
 │
 ├── LICENSE
 └── README.md
+```
 
 ---
 
@@ -91,7 +93,6 @@ mvn spring-boot:run
 
 ---
 
-
 ## 🌐 Frontend Setup
 
 Open the frontend/index.html file in your browser:
@@ -115,22 +116,24 @@ GET /videos – Lists all saved videos
 
 ### 🖼️ Screenshots
 
-## 🖼️ Screenshots
-
 ### 🎯 1. Index Page – Enter YouTube Video URL
 This is the main input page where users can submit a YouTube video link.
+
 ![Index Page](https://github.com/user-attachments/assets/a9e5bc2e-f26d-4df7-9a6b-d86f38dbafef)
 
 ### 📥 2. Data Inserted Confirmation – Same Page
 Once a valid video URL is submitted, the corresponding video details are displayed below the form.
+
 ![Inserted Data](https://github.com/user-attachments/assets/47dc2fb5-5b7a-4522-87d0-1ce61cf01ad7)
 
 ### 📋 3. View All Inserted Data
 A page that displays all previously inserted video entries stored in the database.
+
 ![All Data Page](https://github.com/user-attachments/assets/3852997c-b015-4199-a520-cee6355a997b)
 
 ### ☁️ 4. MongoDB Atlas – Video Data Stored
 A view of MongoDB Atlas showing the `videos` collection with inserted documents.
+
 ![MongoDB Atlas](https://github.com/user-attachments/assets/7fcb193c-91ab-4ed7-96a8-a7c5d01ad732)
 
 ---
