@@ -1,0 +1,41 @@
+package com.data.YouTube_API.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.data.YouTube_API.entity.Video_Details;
+import com.data.YouTube_API.repository.VideoRepository;
+import com.mongodb.DuplicateKeyException;
+
+@Service
+public class VideoService {
+
+	@Autowired
+	private VideoRepository videoRepo;
+	
+
+	public ResponseEntity<?> save(Video_Details v) {
+	    try {
+	        Video_Details existing = videoRepo.findVideoById(v.getVideoId());
+
+	        if (existing == null) {
+	            return ResponseEntity.status(HttpStatus.CREATED).body(v); 
+	        } else {
+	            System.out.println("Video already exists: " + v.getVideoId());
+	            return ResponseEntity.status(HttpStatus.CONFLICT).body(false);
+	        }
+
+	    } catch (org.springframework.dao.DuplicateKeyException e) {
+	        System.out.println("Caught duplicate key for videoId: " + v.getVideoId());
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(false);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        System.out.println("Exception Handled");
+            return ResponseEntity.status(HttpStatus.CONFLICT).body(false);
+	    }
+	}
+}

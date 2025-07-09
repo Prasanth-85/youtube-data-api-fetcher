@@ -1,0 +1,15 @@
+package com.data.YouTube_API.entity;
+
+import java.time.LocalDateTime;
+import java.time.OffsetDateTime;
+import java.util.*;
+
+public class demo {
+
+	public static void main(String[] args) {
+        String youtubeTime = "2024-07-22T04:43:59Z";
+        OffsetDateTime parsedTime = OffsetDateTime.parse(youtubeTime);
+        System.out.println(parsedTime);           // Full UTC format
+        System.out.println(parsedTime.toLocalDateTime()); // If you just want date + time
+    }
+}

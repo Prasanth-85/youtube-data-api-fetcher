@@ -1,0 +1,11 @@
+package com.data.YouTube_API.repository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.data.YouTube_API.entity.Video_Details;
+
+public interface VideoRepository extends MongoRepository<Video_Details, String>{
+
+	
+	public Video_Details findVideoById (String id);
+}

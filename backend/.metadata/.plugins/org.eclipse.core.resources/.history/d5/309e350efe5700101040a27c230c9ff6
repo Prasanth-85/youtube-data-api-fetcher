@@ -1,0 +1,14 @@
+package com.data.YouTube_API.entity;
+
+import java.time.OffsetDateTime;
+
+public class s {
+
+	public static void main(String[] args) {
+		
+		Video_Details vd = new Video_Details();
+		vd.setPublisherAt("2024-07-22T04:43:59Z");
+		
+		System.out.println(vd.getPublisherAt());
+	}
+}

@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #bad4aa;
+}
+body{
+    height: max-content;
+    /* border: 2px solid black; */
+    padding: 50px;
+}
+h1{
+    font-weight: normal;
+}
+#ip{
+    height: 40px;
+    width: 600px;
+    margin: 40px;
+    border: none;
+    border-radius: 20px;
+    padding: 15px;
+    outline: none;
+    box-shadow: 2px 2px 3px #3333;
+    background-color: #f8f9fb;
+}
+#btn{
+    background-color: #f8f9fb;
+    border-radius: 20px;
+    height: 30px;
+    width: 80px;
+    border: none;
+    font-size: medium;
+    box-shadow: 2px 2px 3px #3333;
+}
+#btn:hover{
+    cursor: pointer;
+}
+#btn:active{
+    box-shadow: inset 2px 2px 3px #3333;
+}
+#sbtn{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+}
+#sbtn{
+    background-color: #f8f9fb;
+    border-radius: 20px;
+    height: 30px;
+    width: 160px;
+    border: none;
+    font-size: medium;
+    box-shadow: 2px 2px 3px #3333;
+}
+#sbtn:hover{
+    cursor: pointer;
+}
+#sbtn:active{
+    box-shadow: inset 2px 2px 3px #3333;
+}
+.outer{
+    height: max-content;
+    padding: 50px;
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+#videoDetails{
+    height: max-content;
+    width: 75%;
+    /* border: 2px solid red; */
+}
+.detailBox{
+    margin: 50px;
+    height: max-content;
+    border-radius: 20px;    
+    background-color: #f8f9fb;
+    box-shadow: 2px 2px 5px #3333;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+.detailBox > p{
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    /* border: 2px  solid black; */
+    align-items: center;
+    margin-bottom: 5px;
+    display: flex;
+}
+p{
+    background-color: #f8f9fb;
+}
+.lable{
+    display: inline-block;
+    width: 200px;
+    background-color: #f8f9fb;
+}
+.value{
+    background-color: #f8f9fb;
+    display: inline-block;
+}

@@ -1,0 +1,14 @@
+package com.data.YouTube_API.entity;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
+
+@Document(collection = "Details")
+public class Video_Details {
+
+	@MongoId
+	private String id;
+	private String videoId;
+	private String videoTitle;
+	private String publishedAt;
+}

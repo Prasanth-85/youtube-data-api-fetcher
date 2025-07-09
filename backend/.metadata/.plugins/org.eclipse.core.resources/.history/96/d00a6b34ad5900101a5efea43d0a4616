@@ -1,0 +1,64 @@
+package com.data.YouTube_API.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.data.YouTube_API.entity.Video_Details;
+import com.data.YouTube_API.repository.VideoRepository;
+import com.mongodb.DuplicateKeyException;
+
+@Service
+public class VideoService {
+
+	@Autowired
+	private VideoRepository videoRepo;
+	
+
+	public Video_Details save(Video_Details v) {
+		Video_Details existing = videoRepo.findVideoById(v.getVideoId());
+	    try {
+
+	        if (existing == null) {
+	            return videoRepo.save(v); 
+	        } else {
+//	            System.out.println("Video already exists: " + v.getVideoId());
+//	            return null;
+	        	existing.setChannelId(v.getChannelId());
+	        	existing.setChannelTitle(v.getChannelTitle());
+	        	existing.setVideoTitle(v.getVideoTitle());
+	        	existing.setLikeCount(v.getLikeCount());
+	        	existing.setViewCount(v.getViewCount());
+	        	existing.setPublishedAt(v.getPublishedAt());
+	        	
+	        	return videoRepo.save(existing);
+	        }
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	        System.out.println("Exception Handled");
+	        existing.setChannelId(v.getChannelId());
+        	existing.setChannelTitle(v.getChannelTitle());
+        	existing.setVideoTitle(v.getVideoTitle());
+        	existing.setLikeCount(v.getLikeCount());
+        	existing.setViewCount(v.getViewCount());
+        	existing.setPublishedAt(v.getPublishedAt());
+        	
+        	return videoRepo.save(existing);
+//            return null;
+	    }
+	}
+	
+	public Video_Details findVideoById(String vid) {
+		return videoRepo.findVideoById(vid);
+	}
+	
+	public List<Video_Details> findAll(){
+		return videoRepo.findAll();
+	}
+}

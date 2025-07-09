@@ -1,0 +1,31 @@
+package com.data.YouTube_API.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.data.YouTube_API.entity.Video_Details;
+import com.data.YouTube_API.repository.VideoRepository;
+import com.mongodb.DuplicateKeyException;
+
+@Service
+public class VideoService {
+
+	@Autowired
+	private VideoRepository videoRepo;
+	
+	public Video_Details save(Video_Details v) {
+		
+		try {
+			Video_Details existing = videoRepo.findVideoById(v.getVideoId());
+//			if (existing == null) {
+				return videoRepo.save(v);
+			
+		} catch (DuplicateKeyException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
+	}
+}

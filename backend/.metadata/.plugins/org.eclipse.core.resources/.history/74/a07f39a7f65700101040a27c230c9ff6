@@ -1,0 +1,9 @@
+package com.data.YouTube_API;
+
+public class Snippet {
+	public static void main(String[] args) {
+		spring.data.mongodb.uri=mongodb+srv://Prasanth-85:Prasanth%402004@cluster0.j4ksi1y.mongodb.net/Products?retryWrites=true&w=majority&appName=Cluster0
+		
+	}
+}
+

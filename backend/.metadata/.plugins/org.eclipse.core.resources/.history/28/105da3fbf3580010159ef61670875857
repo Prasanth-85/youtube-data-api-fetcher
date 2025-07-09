@@ -1,0 +1,67 @@
+package com.data.YouTube_API.entity;
+
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.MongoId;
+
+@Document(collection = "details")
+public class Video_Details {
+
+	@MongoId
+	private String _id;
+	
+	@Indexed(unique = true)
+	private String videoId;
+	private String channelId;
+	private String channelTitle;
+	private String videoTitle;
+    private String publishedAt;
+    private long viewCount;
+    private long likeCount;
+    
+	public String getChannelId() {
+		return channelId;
+	}
+	public void setChannelId(String channelId) {
+		this.channelId = channelId;
+	}
+	public String getChannelTitle() {
+		return channelTitle;
+	}
+	public void setChannelTitle(String channelTitle) {
+		this.channelTitle = channelTitle;
+	}
+	public String getVideoId() {
+		return videoId;
+	}
+	public void setVideoId(String videoId) {
+		this.videoId = videoId;
+	}
+	public String getVideoTitle() {
+		return videoTitle;
+	}
+	public void setVideoTitle(String videoTitle) {
+		this.videoTitle = videoTitle;
+	}
+	public String getPublishedAt() {
+		return publishedAt;
+	}
+	public void setPublishedAt(String publisherAt) {
+		this.publishedAt = publisherAt;
+	}
+	public long getViewCount() {
+		return viewCount;
+	}
+	public void setViewCount(long viewCount) {
+		this.viewCount = viewCount;
+	}
+	public long getLikeCount() {
+		return likeCount;
+	}
+	public void setLikeCount(long likeCount) {
+		this.likeCount = likeCount;
+	}
+    
+    
+
+}	
