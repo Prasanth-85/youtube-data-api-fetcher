@@ -83,8 +83,10 @@ cd youtube-data-api-fetcher/backend
 ```
 
 ### 2. Add your MongoDB URI and YouTube API Key in application.properties:
+```bash
 spring.data.mongodb.uri=mongodb+srv://<username>:<password>@cluster.mongodb.net/your-db
 youtube.api.key=YOUR_YOUTUBE_API_KEY
+```
 
 ### 3. Run the backend:
 ```bash
