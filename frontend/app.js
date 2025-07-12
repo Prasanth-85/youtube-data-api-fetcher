@@ -1,11 +1,8 @@
-// https://www.youtube.com/watch?v=rJeWebGwEXg
-// https://youtube.com/shorts/7074xNgAc3U?si=htNIjDqrRzSHruJ2
-
 const input = document.getElementById("ip")
 const body = document.querySelector("body")
 const fetchedDetails = document.getElementById("videoDetails");
 
-const apiKey="AIzaSyAKp52yQvrQAndgsZWKef0Kr8FTLNnMVBE"
+const apiKey=[YOUR_API_KEY]
 
 async function work() {
     function extractVideoId(url) { 
@@ -56,16 +53,13 @@ async function work() {
                 body : JSON.stringify(videoDetails)
             })
             if (!request.ok) {
-                const errorText = await request.text()// Not JSON, read as plain text
+                const errorText = await request.text()
                 alert(errorText)
                 console.log(errorText)
                 return;
             }
 
             var result = await request.json()
-            // const container = document.getElementById("videoDetails");
-            // container.innerHTML = "";
-            // var detailsbox = document.createElement("div")
             fetchedDetails.classList.add("detailBox")
             fetchedDetails.innerHTML=
             `            
@@ -77,7 +71,6 @@ async function work() {
             <p><strong class="lable">View Count</strong> <span class="value">${result.viewCount}</span></p>
             <p><strong class="lable">Like Count</strong> <span class="value">${result.likeCount}</span></p>
             `
-            // container.append(detailsbox)
             console.log(result)
             alert("Data Inserted Sucessfully")
             
@@ -87,7 +80,6 @@ async function work() {
         }
 
     } catch (error) {
-        // message.innerHTML="<h1>Invalid URL</h1>"
         alert("Invalid URL")
     }
 }
